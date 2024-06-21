@@ -1,0 +1,31 @@
+package org.example;
+
+// 문제 : 아래가 실행되도록 해주세요.
+// 조건 : 배열을 사용할 수 없습니다.
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = 0;
+
+        while (true) {
+            System.out.printf("숫자 : ");
+            try {
+                a = sc.nextInt(); //대기 숫자를 똑바로 입력할 때까지
+                sc.nextLine();// 버퍼를 비운다
+                break;
+            } catch (InputMismatchException e) {
+                sc.nextLine(); // 버퍼를 비운다
+                System.out.println("숫자 똑바로 입력해");
+
+            }
+        }
+        System.out.printf("입련된 숫자 : %d\n", a);
+
+        sc.close();
+    }
+}
